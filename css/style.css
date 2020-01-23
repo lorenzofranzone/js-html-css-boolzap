@@ -41,10 +41,22 @@ body:before {
 /* ——————————————————————————————————————————————————
 Scrollbar */
 
-::-webkit-scrollbar {
+aside .list-chats::-webkit-scrollbar,
+main .block-single-chat::-webkit-scrollbar {
   width: 6px!important;
   height: 6px!important;
 }
+
+aside .list-chats::-webkit-scrollbar-track-piece,
+main .block-single-chat::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+aside .list-chats::-webkit-scrollbar-thumb,
+main .block-single-chat::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+}
+
 
 /* ——————————————————————————————————————————————————
 Wrapper */
@@ -194,8 +206,10 @@ All Chats Search */
 List Chats */
 
 .list-chats {
-  width: calc(100% - 6px);
+  /* width: calc(100% - 6px); */
+  width: 100%;
   height: 100%;
+  padding-right: 6px;
   overflow-y: scroll;
   /* POSITION */
   display: flex;
@@ -214,6 +228,7 @@ Main content */
 
 main {
   flex: 70%;
+  background: #fff;
   /* POSITION */
   display: flex;
   flex-direction: column;
@@ -234,10 +249,13 @@ main .header {
 Block Single Chat */
 
 .block-single-chat {
-  width: calc(100% - 6px);
+  /* width: calc(100% - 6px); */
+  width: 100%;
   height: 100%;
+  padding-right: 6px;
   border-left: 1px solid rgba(0,0,0,.03);
   overflow-y: scroll;
+  background: url(../img/bg-chat.png);
 }
 
 /* ——————————————————————————————————————————————————
