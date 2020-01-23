@@ -155,7 +155,6 @@ input[type="textarea"] {
   height: 35px;
   padding: 8px;
   border-radius: 18px;
-  /* box-shadow: none; */
   border: none;
   font-size: 15px;
 }
@@ -251,7 +250,29 @@ All Chats Search */
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
 }
+
+.all-chats-search input {
+  padding: 0 32px 0 65px;
+}
+
+.all-chats-search input:focus {
+  outline: none;
+}
+
+.all-chats-search i {
+  position: absolute;
+  left: 32px;
+  color: #a6a6a6;
+  font-size: 15px;
+}
+
+.all-chats-search i[class="fas fa-arrow-left"] {
+  color: #9de1fe;
+}
+
+.bgw { background: #fff; }
 
 /* ——————————————————————————————————————————————————
 List Chats */
