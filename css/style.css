@@ -22,10 +22,25 @@ Wrapper */
 
 .wrapper {
   margin: 19px auto;
-  width: 1396px;
+  max-width: 1396px;
   height: calc(100vh - 38px);
   /* POSITION */
   display: flex;
+}
+
+/* ——————————————————————————————————————————————————
+Header */
+
+.header {
+  /* flex: none; */
+  width: 100%;
+  height: 59px;
+  padding: 10px 16px;
+  /* POSITION */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 
@@ -37,6 +52,57 @@ A S I D E   L E F T
 
 aside {
   flex: 30%;
+  /* POSITION */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ——————————————————————————————————————————————————
+Notifications */
+
+.notifications {
+  width: 100%;
+  min-height: 62px;
+  padding: 13px;
+  /* POSITION */
+  display: flex;
+  align-items: center;
+}
+
+/* ——————————————————————————————————————————————————
+All Chats */
+
+.all-chats {
+  width: 100%;
+  height: 49px;
+  padding: 13px;
+  /* POSITION */
+  display: flex;
+  align-items: center;
+}
+
+/* ——————————————————————————————————————————————————
+All Chats Search */
+
+.all-chats-search {
+  width: 100%;
+  height: 49px;
+  padding: 13px;
+  /* POSITION */
+  display: flex;
+  align-items: center;
+}
+
+/* ——————————————————————————————————————————————————
+List Chats */
+
+.list-chats {
+  width: calc(100% - 6px);
+  height: 100%;
+  /* POSITION */
+  display: flex;
+  flex-direction: column;
 }
 
 
