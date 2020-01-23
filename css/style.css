@@ -175,6 +175,42 @@ Notifications */
   /* POSITION */
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+}
+
+.notifications .circle {
+  width: 46px;
+  height: 46px;
+  margin: 10px 18px 10px 0;
+  background: #fff;
+  border-radius: 50%;
+  /* POSITION */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications .circle i {
+  font-size: 18px;
+  color: #9de1fe;
+}
+
+.notifications .bell-notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.notifications .bell-title {
+  font-size: 16px;
+  /* font-weight: 700; */
+  color: #343738;
+}
+
+.notifications .bell-info {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #404b4f;
 }
 
 /* ——————————————————————————————————————————————————
@@ -200,6 +236,7 @@ All Chats Search */
   /* POSITION */
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* ——————————————————————————————————————————————————
