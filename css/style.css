@@ -408,8 +408,80 @@ Block Single Chat */
   align-content: flex-start;
 }
 
+.message {
+  display: inline-block;
+  padding: 6px 7px 8px 9px;
+  font-size: 14.2px;
+  color: #303030;
+  border-radius: 7.5px;
+  margin-bottom: 3px;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+  position: relative;
+}
+
+.message span {
+  font-size: 11px;
+  color: rgba(0,0,0,.45);
+  display: block;
+  text-align: right;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+}
+
+.message:hover:after{
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: 15px;
+  color: #959b9d;
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  cursor: pointer;
+}
+
+.message:hover:after:after{
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: 15px;
+  color: #959b9d;
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  cursor: pointer;
+}
+
+.mine:hover:after {
+  box-shadow: -6px 2px 8px 8px #dcf8c6;
+  background: #dcf8c6;
+}
+
+.mine {
+  background: #dcf8c6;
+  align-self: flex-end;
+  margin-left: 35%;
+}
+
+.user {
+  background: #fff;
+  align-self: flex-start;
+  margin-right: 35%;
+}
+
+.user:hover:after {
+  box-shadow: -6px 2px 8px 8px #fff;
+  background: #fff;
+}
+
+.block-single-chat .mine + .user,
+.block-single-chat .user + .mine {
+  margin-top: 12px;
+}
+
 /* ——————————————————————————————————————————————————
-Block Single Chat */
+Block Write message */
 
 .block-write-message {
   max-width: 100%;
@@ -444,41 +516,4 @@ Block Single Chat */
   min-height: 20px;
   height: 42px;
   border-radius: 21px;
-}
-
-.message {
-  display: inline-block;
-  padding: 6px 7px 8px 9px;
-  font-size: 14.2px;
-  color: #303030;
-  border-radius: 7.5px;
-  margin-bottom: 3px;
-  box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
-  position: relative;
-}
-
-p.message span {
-  font-size: 11px;
-  color: rgba(0,0,0,.45);
-  display: block;
-  text-align: right;
-  position: relative;
-  top: 4px;
-}
-
-.mine {
-  background: #dcf8c6;
-  align-self: flex-end;
-  margin-left: 35%;
-}
-
-.user {
-  background: #fff;
-  align-self: flex-start;
-  margin-right: 35%;
-}
-
-.block-single-chat .mine + .user,
-.block-single-chat .user + .mine {
-  margin-top: 12px;
 }
