@@ -27,6 +27,7 @@ $(document).ready(function(){
   // Main Chat
   $('.send-message').click(function(){
     sendMessage();
+    getAnswer();
     // RIVEDERE IL CAMBIAMENTO DELL'ICONA SE SCRIVO UN MESSAGGIO MA NON INVIO
   });
 
@@ -38,6 +39,27 @@ $(document).ready(function(){
   $(".block-write-message i.send-message").on("click", function () {
     $(this).attr("class","fas fa-microphone send-message");
   });
+
+  // FX Answer
+  var answer;
+  function getAnswer() {
+    answer = setTimeout(autoAnswer, 1000);
+  }
+
+  function autoAnswer() {
+    var newMessage = $('.template .message').clone();
+    newMessage.children('p').text('Risposta automatica');
+
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = addZero(date.getMinutes());
+    var time = hours + ':' + minutes;
+
+    newMessage.children('span').text(time);
+    newMessage.addClass('user');
+
+    $('.block-single-chat').append(newMessage);
+  }
 
 
   //////////////////////////////////////////////////
