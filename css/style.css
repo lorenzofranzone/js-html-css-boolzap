@@ -429,31 +429,21 @@ Block Single Chat */
   cursor: pointer;
 }
 
-.message:hover:after{
-  content: '\f078';
-  font-family: "Font Awesome 5 Free";
-  font-weight: 700;
+.message:hover .dropicon {
+  display: block;
+}
+
+.message .dropicon{
   font-size: 15px;
   color: #959b9d;
   position: absolute;
   top: 8px;
   right: 7px;
   cursor: pointer;
+  display: none;
 }
 
-.message:hover:after:after{
-  content: '\f078';
-  font-family: "Font Awesome 5 Free";
-  font-weight: 700;
-  font-size: 15px;
-  color: #959b9d;
-  position: absolute;
-  top: 8px;
-  right: 7px;
-  cursor: pointer;
-}
-
-.mine:hover:after {
+.mine .dropicon {
   box-shadow: -6px 2px 8px 8px #dcf8c6;
   background: #dcf8c6;
 }
@@ -470,7 +460,7 @@ Block Single Chat */
   margin-right: 35%;
 }
 
-.user:hover:after {
+.user .dropicon {
   box-shadow: -6px 2px 8px 8px #fff;
   background: #fff;
 }
@@ -479,6 +469,27 @@ Block Single Chat */
 .block-single-chat .user + .mine {
   margin-top: 12px;
 }
+
+.dropdown {
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26), 0 2px 10px 0 rgba(0,0,0,.16);
+  position: absolute;
+  white-space: nowrap;
+  z-index: 10;
+  top: 30px;
+  right: 0;
+  display: none;
+}
+
+.dropdown li {
+  list-style: none;
+  padding: 13px 24px;
+  font-size: 14.5px;
+  color: #4a4a4a;
+}
+
+.d-none {display: none;}
+.d-block {display: block;}
 
 /* ——————————————————————————————————————————————————
 Block Write message */
