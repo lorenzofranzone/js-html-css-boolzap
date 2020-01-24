@@ -31,7 +31,7 @@
       <div class="header">
 
         <!-- my-profile-image -->
-        <img src="img/my-profile.jpeg"" alt="My Profile Image"> <!-- / my-profile-image -->
+        <img src="img/my-profile.jpeg" alt="My Profile Image"> <!-- / my-profile-image -->
 
         <!-- header-icons -->
         <ul>
@@ -206,27 +206,30 @@
       </div> <!-- / header -->
 
       <!-- block-single-chat -->
-      <div class="block-single-chat">
+      <div class="block-single-chat active">
 
         <div class="message mine">
-          <p>Ciao come stai?<span>22:40</span></p>
+          <p>Ciao come stai?</p>
           <i class="fas fa-chevron-down dropicon"></i>
+          <span>22:40</span>
           <ul class="dropdown">
             <li>Info messaggio</li>
             <li>Cancella messaggio</li>
           </ul>
         </div>
         <div class="message mine">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<span>23:30</span></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <i class="fas fa-chevron-down dropicon"></i>
+          <span>23:30</span>
           <ul class="dropdown">
             <li>Info messaggio</li>
             <li>Cancella messaggio</li>
           </ul>
         </div>
         <div class="message user">
-          <p>Ciao come stai?<span>09:40</span></p>
+          <p>Ciao come stai?</p>
           <i class="fas fa-chevron-down dropicon"></i>
+          <span>09:40</span>
           <ul class="dropdown">
             <li>Info messaggio</li>
             <li>Cancella messaggio</li>
@@ -235,12 +238,21 @@
 
       </div><!-- block-single-chat -->
 
+      <!-- T e m p l a t e -->
+      <div class="template">
+        <div class="message">
+          <p></p>
+          <i class="fas fa-chevron-down dropicon"></i>
+          <span></span>
+        </div>
+      </div> <!-- / T e m p l a t e -->
+
       <!-- block-write-message -->
       <div class="block-write-message">
 
         <i class="far fa-grin"></i>
-        <input type="textarea" name="write-chat" value="" placeholder="Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
+        <input type="text" placeholder="Scrivi un messaggio" class="text-send-message">
+        <i class="fas fa-microphone send-message"></i>
 
       </div><!-- block-write-message -->
 
@@ -253,7 +265,7 @@
   S C R I P T S
   //////////////////////////////////////////////////
   -->
-  <script src="js/scripts.js" charset="utf-8"></script>
+  <script src="js/scripts.js"></script>
 
 </body>
 </html>
