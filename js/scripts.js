@@ -6,11 +6,13 @@ $(document).ready(function(){
   $(".all-chats-search input").on("click", function (event) {
     $('.all-chats-search').addClass("bgw");
     $('.all-chats-search i').attr("class","fas fa-arrow-left");
+    $(this).attr("placeholder","");
     event.stopPropagation();
   });
   $("body").on("click", function () {
     $('.all-chats-search').removeClass('bgw');
     $('.all-chats-search i').attr("class","fas fa-search");
+    $(".all-chats-search input").attr('placeholder','Cerca o inizia una nuova chat');
   });
 
   // Dropdown Message
@@ -25,7 +27,7 @@ $(document).ready(function(){
   // Main Chat
   $('.send-message').click(function(){
     sendMessage();
-    // $(this).attr("class","fas fa-microphone send-message");
+    // RIVEDERE IL CAMBIAMENTO DELL'ICONA SE SCRIVO UN MESSAGGIO MA NON INVIO
   });
 
   // Message Icon send

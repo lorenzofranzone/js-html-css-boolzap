@@ -245,6 +245,7 @@ All Chats Search */
   align-items: center;
   flex-shrink: 0;
   position: relative;
+  transition: all .3s;
 }
 
 .all-chats-search input {
@@ -260,6 +261,7 @@ All Chats Search */
   left: 32px;
   color: #a6a6a6;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .all-chats-search i[class="fas fa-arrow-left"] {
