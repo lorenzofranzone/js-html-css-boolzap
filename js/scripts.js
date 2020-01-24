@@ -25,6 +25,16 @@ $(document).ready(function(){
   // Main Chat
   $('.send-message').click(function(){
     sendMessage();
+    // $(this).attr("class","fas fa-microphone send-message");
+  });
+
+  // Message Icon send
+  $(".text-send-message").on("click", function () {
+    $('.block-write-message i.send-message').attr("class","fas fa-paper-plane send-message");
+  });
+
+  $(".block-write-message i.send-message").on("click", function () {
+    $(this).attr("class","fas fa-microphone send-message");
   });
 
 
@@ -52,6 +62,7 @@ $(document).ready(function(){
       $('.block-single-chat').append(newMessage);
 
       $('input.text-send-message').val('');
+
     }
   }
 
