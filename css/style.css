@@ -181,13 +181,6 @@ aside {
 }
 
 /* ——————————————————————————————————————————————————
-Header */
-
-aside .header {
-  border-bottom: 1px solid rgba(0,0,0,0);
-}
-
-/* ——————————————————————————————————————————————————
 Notifications */
 
 .notifications {
@@ -211,6 +204,7 @@ Notifications */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .notifications .circle i {
@@ -278,7 +272,7 @@ All Chats Search */
 List Chats */
 
 .list-chats {
-  overflow-y: visible;
+  overflow-y: scroll;
 }
 
 /* ——————————————————————————————————————————————————
@@ -314,6 +308,7 @@ Single Chats */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .single-chat .avatar img {
@@ -328,6 +323,7 @@ Single Chats */
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .single-chat .preview:hover {
@@ -338,11 +334,13 @@ Single Chats */
 .single-chat .preview .title {
   font-size: 16px;
   color: #000;
+  white-space: nowrap;
 }
 
 .single-chat .preview .info {
   font-size: 14px;
   color: rgba(0,0,0,.6);
+  white-space: nowrap;
 }
 
 .single-chat .time {
