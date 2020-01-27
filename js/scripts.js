@@ -86,6 +86,13 @@ $(document).ready(function(){
       $('.block-single-chat.active').append(newMessage);
 
       $('input.text-send-message').val('');
+      // Keypress
+      $('.text-send-message').keypress(function(event){
+        if (event.which == 13) {
+          sendMessage();
+          getAnswer();
+        }
+      });
 
     }
   }
