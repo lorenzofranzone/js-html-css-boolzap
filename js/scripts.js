@@ -15,6 +15,29 @@ $(document).ready(function(){
     $(".all-chats-search input").attr('placeholder','Cerca o inizia una nuova chat');
   });
 
+  $('.all-chats-search input').keyup(function(){
+    var text = $('.all-chats-search input').val().toLowerCase();
+
+    $('.single-chat').each(function(){
+      var contactName = $(this).find('.title').text().toLowerCase();
+
+      if (contactName.includes(text) == true){
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+
+  // Main Chat
+  $('.send-message').click(function(){
+    sendMessage();
+    getAnswer();
+    // RIVEDERE IL CAMBIAMENTO DELL'ICONA SE SCRIVO UN MESSAGGIO MA NON INVIO
+  });
+
+
   // Dropdown Message
   $(".dropicon").on("click", function (event) {
     $(this).next('ul.dropdown').addClass("d-block");
@@ -24,12 +47,6 @@ $(document).ready(function(){
     $('ul.dropdown').removeClass('d-block');
   });
 
-  // Main Chat
-  $('.send-message').click(function(){
-    sendMessage();
-    getAnswer();
-    // RIVEDERE IL CAMBIAMENTO DELL'ICONA SE SCRIVO UN MESSAGGIO MA NON INVIO
-  });
 
   // Message Icon send
   $(".text-send-message").on("click", function () {
@@ -40,26 +57,9 @@ $(document).ready(function(){
     $(this).attr("class","fas fa-microphone send-message");
   });
 
-  // FX Answer
-  var answer;
-  function getAnswer() {
-    answer = setTimeout(autoAnswer, 1000);
-  }
 
-  function autoAnswer() {
-    var newMessage = $('.template .message').clone();
-    newMessage.children('p').text('Risposta automatica');
 
-    var date = new Date();
-    var hours = date.getHours();
-    var minutes = addZero(date.getMinutes());
-    var time = hours + ':' + minutes;
 
-    newMessage.children('span').text(time);
-    newMessage.addClass('user');
-
-    $('.block-single-chat').append(newMessage);
-  }
 
 
   //////////////////////////////////////////////////
@@ -83,11 +83,32 @@ $(document).ready(function(){
       newMessage.children('span').text(time);
       newMessage.addClass('mine');
 
-      $('.block-single-chat').append(newMessage);
+      $('.block-single-chat.active').append(newMessage);
 
       $('input.text-send-message').val('');
 
     }
+  }
+
+  // FX Answer
+  var answer;
+  function getAnswer() {
+    answer = setTimeout(autoAnswer, 1000);
+  }
+
+  function autoAnswer() {
+    var newMessage = $('.template .message').clone();
+    newMessage.children('p').text('Risposta automatica');
+
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = addZero(date.getMinutes());
+    var time = hours + ':' + minutes;
+
+    newMessage.children('span').text(time);
+    newMessage.addClass('user');
+
+    $('.block-single-chat.active').append(newMessage);
   }
 
   // FX Add Zero to Minutes < 10
