@@ -36,15 +36,24 @@ $(document).ready(function(){
     getAnswer();
     // RIVEDERE IL CAMBIAMENTO DELL'ICONA SE SCRIVO UN MESSAGGIO MA NON INVIO
   });
+  // Keypress
+  $('.text-send-message').keypress(function(event){
+    if (event.which == 13) {
+      sendMessage();
+      getAnswer();
+    }
+  });
 
 
   // Dropdown Message
   $(".dropicon").on("click", function (event) {
-    $(this).next('ul.dropdown').addClass("d-block");
+    $('ul.dropdown').removeClass("active");
+    $(this).parent().find('ul.dropdown').addClass("active");
     event.stopPropagation();
   });
+
   $("body").on("click", function () {
-    $('ul.dropdown').removeClass('d-block');
+    $('ul.dropdown').removeClass('active');
   });
 
 
@@ -56,6 +65,15 @@ $(document).ready(function(){
   $(".block-write-message i.send-message").on("click", function () {
     $(this).attr("class","fas fa-microphone send-message");
   });
+
+  // Single Chat Right Block
+  $(document).on("click", '.single-chat', function () {
+    var data = $(this).attr('data-contact');
+    var selector = '.block-single-chat[data-contact="' + data + '"]';
+    $('.block-single-chat').removeClass('active');
+    $(selector).addClass('active');
+  });
+
 
 
 
@@ -86,14 +104,6 @@ $(document).ready(function(){
       $('.block-single-chat.active').append(newMessage);
 
       $('input.text-send-message').val('');
-      // Keypress
-      $('.text-send-message').keypress(function(event){
-        if (event.which == 13) {
-          sendMessage();
-          getAnswer();
-        }
-      });
-
     }
   }
 
@@ -124,6 +134,12 @@ $(document).ready(function(){
       num = '0' + num;
     }
     return num;
+  }
+
+  // FX Scroll
+  function scrollChat() {
+    var heightChatWindow = $('.block-single-chat.active').height();
+    $('.wrapper-single-active-chat').scrollTop(heightChatWindow);
   }
 
 /////

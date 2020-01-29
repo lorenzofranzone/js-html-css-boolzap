@@ -393,6 +393,13 @@ main .header ul {
   flex-shrink: 1;
 }
 
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Wrapper Single Active Chat */
+.wrapper-single-active-chat {
+  height: 100%;
+  overflow: scroll;
+}
+
 /* ——————————————————————————————————————————————————
 Block Single Chat */
 
@@ -404,14 +411,14 @@ Block Single Chat */
   border-left: 1px solid rgba(0,0,0,.03);
   overflow-y: scroll;
   background: url(../img/bg-chat.png);
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-content: flex-start;
-  /* display: none; */
+  display: none;
 }
 
-.block-single-messages.active {
-  display: block;
+.block-single-chat.active {
+  display: flex;
 }
 
 .message {
@@ -486,6 +493,10 @@ Block Single Chat */
   right: 0;
   display: none;
   cursor: pointer;
+}
+
+.dropdown.active {
+  display: block;
 }
 
 .dropdown li {
